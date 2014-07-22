@@ -1,5 +1,14 @@
 // gcc -fPIC -shared -I/usr/local/include/luajit-2.0/ lua-rc4.c -lluajit-5.1 -lcrypto -o luaRC4.so
 
+/*
+> require "luaRC4";
+> r=luaRC4.rc4('123','12312312312312');
+> print(r);
+b��G5�R1�O)
+> print(luaRC4.rc4('123',r));
+12312312312312
+*/
+
 #include <stdio.h>
 #include <string.h>
 #include <openssl/rc4.h>
